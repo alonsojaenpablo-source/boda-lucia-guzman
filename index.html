@@ -1,0 +1,120 @@
+<!DOCTYPE html><html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi Página Web</title>
+  <style>
+    body {
+      font-family: 'Georgia', serif;
+      margin: 0;
+      padding: 0;
+      background-color: #faf7f2;
+    }
+    .hero {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-image: url('https://images.unsplash.com/photo-1501004318641-b39e6451bec6');
+      background-size: cover;
+      background-position: center;
+      color: #4a3b2a;
+      text-shadow: 0 2px 2px rgba(255,255,255,0.6);
+      letter-spacing: 2px;
+    }
+    .hero h1 {
+      font-size: 4rem;
+    }
+    .hero p {
+      font-size: 1.5rem;
+      margin-top: 10px;
+    }
+    main {
+      padding: 20px;
+      color: #4a3b2a;
+      line-height: 1.6;
+    }
+    footer {
+      background-color: #e8dcc3;
+      text-align: center;
+      padding: 10px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      color: #4a3b2a;
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <h1>Lucia & Guzmán</h1>
+    <p>21 · Marzo · 2026</p>
+  </header>
+  <main>
+    <section id="countdown">
+      <h2>Cuenta regresiva</h2>
+      <p id="timer"></p>
+    </section><section id="nuestra-historia">
+  <h2>Nuestra historia</h2>
+  <p>Todo comenzó con una mirada, una sonrisa y el destino haciendo de las suyas... Esta es la historia de Lucia y Guzmán, dos almas que encontraron el camino hacia su propio "para siempre".</p>
+</section>
+
+<section id="itinerario">
+  <h2>Itinerario del día</h2>
+  <ul>
+    <li>13:00 — Ceremonia</li>
+    <li>14:30 — Fotografías y recibimiento</li>
+    <li>15:00 — Banquete</li>
+    <li>18:00 — Baile y celebración</li>
+    <li>00:00 — Cierre</li>
+  </ul>
+</section>
+
+<section id="vestimenta">
+  <h2>Vestimenta</h2>
+  <p>Estilo campestre elegante — tonos tierra, beige, verde olivo, blanco roto. Calzado cómodo para caminar sobre césped.</p>
+</section>
+
+<section id="ubicacion">
+  <h2>Ubicación</h2>
+  <p>La Fuentona, Santillana del Mar</p>
+  <iframe src="https://www.google.com/maps?q=La+Fuentona+Santillana+del+Mar&output=embed" width="100%" height="300" style="border:0;"></iframe>
+</section>
+
+<section id="rsvp">
+  <h2>Confirmación de asistencia</h2>
+  <form>
+    <label>Nombre: <input type="text" required></label><br><br>
+    <label>¿Asistirás? 
+      <select required>
+        <option value="si">Sí</option>
+        <option value="no">No</option>
+      </select>
+    </label><br><br>
+    <label>Mensaje (opcional):<br><textarea rows="4"></textarea></label><br><br>
+    <button type="submit">Enviar</button>
+  </form>
+</section>
+
+<script>
+  const weddingDate = new Date('2026-03-21T00:00:00');
+  function updateCountdown() {
+    const now = new Date();
+    const diff = weddingDate - now;
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((diff / (1000 * 60)) % 60);
+    const seconds = Math.floor((diff / 1000) % 60);
+    document.getElementById('timer').textContent = `${days} días, ${hours}h ${minutes}m ${seconds}s`;
+  }
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+</script>
+
+  </main>
+  <footer>
+    <p>© 2025 Mi Página Web</p>
+  </footer>
+</body>
+</html>
